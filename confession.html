@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>TeenHub-Confessions</title>
+        <link rel="stylesheet" href="style2.css"/>
+    </head>
+    <body>
+        <header>
+            <h1> 🎧Teen confessions</h1>
+            <nav>
+                <a href="Index.html">Home</a>
+                <a href="confession.html">confession</a>
+                <a href="gamechat.html">Gamechat</a>
+                <a href="contact.html">Venting/ contact</a>
+            </nav>
+        </header>
+        <main>
+            <h2> Share Your Secrets Anonymously</h2>
+            <p>This is your safe board to share Secrets, crush confessions, 
+                or silly moments.
+                Be respectful-no hate, no bullying.💜 </p>
+
+                <form id="confession-form">
+                    <textarea placeholder="write your confession here..." required
+                    ></textarea>
+                    <button type="submit"> Post confession</button>
+                </form>
+                <h3>Latest Confessions:</h3>
+                <div id="confession-list">
+                    <p> No confession yet-be the first!💜</p>
+                </div>
+        </main>
+    <footer>
+        <p>© 2025 Teenhub. All rights reserved.</p>
+    </footer>
+    <script>
+        const form =
+        document.getElementById('confession-form');
+        const confessionlist =
+        document.getElementById('confession-list');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const text =
+            form.querySelector('textarea').value.trim();
+            if (text === "") return;
+            const p =document.createElement('p');
+            p.textContent ="💜" + text;
+            confessionlist.prepend(p);
+
+            form.querySelector('textarea').value="";
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>TeenHub-Game Chat</title>
+        <link rel="stylesheet" href="style2.css"/>
+    </head>
+    <body>
+        <header>
+            <h1> 🎮👾Game Chat</h1>
+            <nav>
+                <a href="Index.html">Home</a>
+                <a href="resources.html">Study Resources</a>
+                <a href="gamechat.html">Gamechat</a>
+                <a href="contact.html">Venting/ contact</a>
+            </nav>
+        </header>
+        <main>
+            <h2> Talk Games & Share Hints!</h2>
+            <div>
+                Nickname: <input type="text" id="nickname"
+                placeholder="anonymously">
+            </div>
+            <div id="chat-box"></div>
+            <input type="text" id="message" placeholder="Type your message.....">
+            <button onclick="sendMessage()">Send</button>
+        </main>
+    <footer>
+        <p>© 2025 Teenhub. All rights reserved.</p>
+    </footer>
+    <script>
+        function sendMessage(){
+            let nick= document.getElementById('nickname').value || "Anonymous";
+            let msg=
+            document.getElementById('message').value.trim();
+            if (msg === "") return;
+
+            let chatBox = document.getElementById('Chat-box');
+            let newMsg = document.createElement('div');
+            newMsg.textContent= '${nick}; ${msg}';
+            chatBox.appendChild(newMsg);
+
+            document.getElementById('message').value="";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        </script>
+  </body>
+</html>

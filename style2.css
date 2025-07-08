@@ -1,0 +1,87 @@
+/* style.css */
+body {
+    background-color: #121212;
+    color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+header{
+    background: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    color: #bb86fc;
+}
+nav {
+    margin-top: 10px;
+}
+nav a {
+    color: #03dac6;
+    margin: 0 10px;
+    text-decoration: none;
+}
+nav a :hover {
+    text-decoration: underline;
+}
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+}
+.hero {
+    text-align: center;
+}
+.cards {
+      display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #bb86fc;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+form input, form textarea {
+    background: #1e1e1e;
+    border: 1px solid #444;
+    color: #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+form button {
+    background: #bb86fc;
+    color: #121212;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+#chat-box {
+    background: #1e1e1e;
+    height: 200px;
+    overflow-y: scroll;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #444;
+}
+footer {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+    margin-top:40px;
+}
+#confession-list:p {
+    background: #1e1e1e;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}

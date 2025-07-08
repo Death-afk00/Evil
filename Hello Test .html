@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+<title>My Personal Portfolio</title>
+<link
+href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    
+    <style>
+    * { margin:0; padding:0; box-sizing: border-box; }
+        body {
+            background: url('death1.jpg') center/cover no-repeat,
+            linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        body::before{
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .socials a {
+            color:#fff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .socials a:hover {
+            transform: scale(1.2);
+        }
+        .toggle-theme {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border: none;
+            color:#fff;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: backgrorund 0.3s ease;
+            z-index: 10;
+        }
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 40px 20px 0;
+        }
+        .tab-buttons button {
+            background: rgba(0, 0, 0, 0,4);
+            border: none;
+            color: #4b4141;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .tab-buttons button:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.05);
+        }
+        .tab-buttons button.active {
+            background: #007bff;
+            color: #fff;
+        }
+        .content-section {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+            margin: 20px auto;
+            text-align: left;
+            max-width: 700px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-section.active {
+            opacity: 1;
+            max-height: 2000px;
+        }
+        .quote {
+            margin: 20px auto;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-style: italic;
+        }
+        body.light-mode {
+            color: #000;
+            background: url('anime.jpg') center/cover no-repeat;
+        }
+         body.light-mode::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255,0.6);
+            z-index: -1;
+         }
+          body.light-mode .tab-buttons button.active {
+            background: rgba(255, 255, 255, 0.6);
+            color: #fff;
+            text-shadow: none;
+          }
+           body.light-mode .toggle-theme {
+            background: rgba(255, 255, 255,0.6);
+            color: #000;
+           }
+           @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem;}
+            .tab-buttons {  flex-direction: column;}
+            .tab-buttons button { width: 100%;}
+           }
+           </style>
+           </head>
+           <body>
+            <!--toggle-->
+            <button class="toggle-theme" onclick="toggleTheme()">
+                <span class="material-icons">light_mode</span>
+                </button>
+                <!--HERO-->
+                <section class="hero">
+                    <h1>Hello, I'm Soniya</h1>
+                    <p>Web Developer . App Developer .Dreamer</p>
+                    <div class="socials">
+                        <a href="https://mail.google.com/mail/?view=cm&tp=sonya.tp02@gmail.com" target="_blank"><span class="material-icons">email</span></a>
+                             <a href="https://www.instagram.com/dea_dsoul0000" target="_blank"><span
+                            class="material-icons">photo_camera</span></a>
+                             <a href="https://www.facebook.com/soniya.thapa.927225" target="_blank"><span
+                            class="material-icons">public</span></a>
+                          </div>
+                </section>
+                <!--TABS-->
+                <div class="tab-buttons">
+                    <button id="about-btn" onclick="showTab('about')">
+                        <span class="material-icons">person</span> about
+                    </button>
+                     <button id="skills-btn" onclick="showTab('skills')">
+                        <span class="material-icons">build</span>skills
+                     </button>
+                     <button id="Experience-btn" onclick="showTab('Experience')">
+                        <span class="material-icons">work</span> Experience
+                        </button>
+                        <button id="Education-btn" onclick="showTab('Education')">
+                            <span class="material-icons">school</span> Education
+                        </button> 
+                        <button id="projects-btn"
+                        onclick="showTab('projects')">
+                        <span class="material-icons">folder</span> projects
+                          </button>
+                    <button id="contact-btn" onclick="showTab('contact')">
+                        <span class="material-icons">email</span>contact
+                    </button>
+                </div>
+                <!--SECTIONS-->
+                <div id="about" class="content-section active">
+                    <h2>About Me</h2>
+                    <p>My name is Soniya Thapa, and i'm a curious,creative,and driven individual
+        who believes in making the most of every oppurtunity.I was born and raised
+        in Nepal,lamki kailali, Where i developed a love for coding,computers and 
+        many other things. From a young age, i've always been fascinated by how things
+        work and how ideas can change the world.</p>
+                </div>
+                
+                <div id="skills" class="content-section">
+                    <h2>Skills</h2>
+                    <p>UI/UX, Designing Web/App Development, 
+                        Building Android/ios apps....</p>
+                </div>
+                <div id="Experience" class="content-section">
+                    <h2>Experience</h2>
+                    <p> 2025-Current=Training at MGL Institute.
+             Home learning.
+             learning some form school.
+             Just chilling bro.
+             You don't need anything to learn something.</p>
+                </div>
+                <div id="Education" class="content-section">
+                    <h2>Education</h2>
+                    <p> +2, 4 years Training received from MGL Institute..</p>
+                </div>
+                <div id="projects" class="content-section">
+                    <h2>Projects</h2>
+                    <p>none ...</p>
+                </div>
+                <div id="contact" class="content-section">
+                    <h2>Contact</h2>
+                    <p>Email: sonya.tp02@gmail.com</p>
+                </div>
+                <p class="quote">
+                    I believe nothing is impossible. Best of luck friends! 
+                </p>
+           
+                <script>
+                    function showTab(tabName){
+                     const sections=
+document.querySelectorAll('.content-section');
+                    const buttons =
+document.querySelectorAll('.tab-buttons button');
+
+sections.forEach(section=>
+section.classList.remove('active'));
+buttons.forEach(button=>
+button.classList.remove('active'));
+
+document.getElementById(tabName).classList.add('active');
+document.getElementById(tabName + '-btn').classList.add('active');
+
+document.getElementById(tabName).scrollIntoView({ behavior: 'smooth' });
+                    }
+document.getElementById(active-btn).classList.add('active');
+</script>
+
+ <script>
+function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+    const icon= 
+    document.querySelector('.toggle-theme .material-icons');
+    icon.textContent=
+    document.body.classList.contains('light-mode')?
+    'dark_mode' : 'light_mode';
+         }
+    </script>
+ </body>
+</html>
